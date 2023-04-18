@@ -24,12 +24,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+            Expanded(
+                child: Container(
+                  child: Center(
+                    child: Text(_concatenatedText, style: const TextStyle(color: Colors.black87, fontSize: 30.0)),
+                  ),
+                )
+            ),
+
             TextField(
               controller: _text1Controller,
               decoration: InputDecoration(
@@ -44,6 +55,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 16.0),
+
             TextField(
               controller: _text2Controller,
               decoration: InputDecoration(
@@ -58,14 +70,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 16.0),
+
             MaterialButton(
               onPressed: _handleConcatenate,
               color: Colors.black87,
               child: const Text('Concatenar', style: TextStyle(color: Colors.white)),
             ),
             const SizedBox(height: 16.0),
-            Text(_concatenatedText),
+
           ],
+
         ),
       ),
     );
